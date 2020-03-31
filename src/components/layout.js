@@ -39,6 +39,10 @@ const TemplateWrapper = ({ children }) => {
               }
             }
           }
+          datoCmsTitle {
+            firstname
+            lastname
+          }
         }
       `}
       render={data => (
@@ -48,10 +52,20 @@ const TemplateWrapper = ({ children }) => {
             seo={data.datoCmsHome.seoMetaTags}
           />
           <div className="container__sidebar">
+            {/* <h6 className="sidebar__title">
+              <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
+            </h6> */}
+            <h6 className="sidebar_title1">
+              <Link to="/">
+                {data.datoCmsTitle.firstname}
+                <span style={{ color: "#eece1a" }}>
+                  &nbsp;
+                  {data.datoCmsTitle.lastname}
+                </span>
+              </Link>
+            </h6>
+
             <div className="sidebar">
-              <h6 className="sidebar__title">
-                <Link to="/">{data.datoCmsSite.globalSeo.siteName}</Link>
-              </h6>
               <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
@@ -79,6 +93,7 @@ const TemplateWrapper = ({ children }) => {
                   </a>
                 ))}
               </p>
+
               <div className="sidebar__copyright">
                 {data.datoCmsHome.copyright}
               </div>
