@@ -1,3 +1,5 @@
+@import "./background"
+  
 @media screen and (max-width: 899px)
   .container__sidebar
     box-sizing: border-box
@@ -13,9 +15,7 @@
     transition: transform 0.2s ease-in-out
     padding: 20px
     // background-color: $light-bg-color
-    background: url("../img/background.jpg")
-    background-attachment: fixed
-    background-size: cover
+    @include background
     
 
     .container.is-open &
